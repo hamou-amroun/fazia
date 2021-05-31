@@ -3,6 +3,6 @@ package fazia;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Heiii fzrogik ");
+        System.out.println("Hello world");
     }
 }

@@ -9,7 +9,7 @@ public interface INeuron {
 
     // backward retournant l’accumulation du gradient de l’entrée (tableau de double) et prenant en paramètre ce
     //gradient (tableau de double)
-    public double[] backward(double[] inputs);
+    public double[] backward(double dy, double[] dxt);
 
     //  retournant la taille de w.
     public int getWSize();

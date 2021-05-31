@@ -1,8 +1,8 @@
 package fazia.fazia.neurons;
 
-import com.amroun.fazia.transfertFunctions.ITransfertFunction;
-import com.amroun.fazia.utils.IInitialiseBias;
-import com.amroun.fazia.utils.IInitialiseWeights;
+import fazia.fazia.transfertFunctions.ITransfertFunction;
+import fazia.fazia.utils.IInitialiseBias;
+import fazia.fazia.utils.IInitialiseWeights;
 
 public class NeuronLinear implements INeuron {
 
@@ -53,7 +53,7 @@ public class NeuronLinear implements INeuron {
     }
 
     @Override
-    public double[] backward(double[] inputs) {
+    public double[] backward(double dy, double[] dxt) {
         double dxty = this.tf.dft(this.yt) * dy;
         for (int i = 0; i < w.length; i++) {
             dxt[i] += this.w[i] * dxty ;

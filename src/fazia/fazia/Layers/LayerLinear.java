@@ -1,10 +1,9 @@
 package fazia.fazia.Layers;
 
-import com.amroun.fazia.neurons.INeuron;
-import com.amroun.fazia.neurons.NeuronLinear;
-import com.amroun.fazia.transfertFunctions.ITransfertFunction;
-import com.amroun.fazia.utils.IInitialiseBias;
-import com.amroun.fazia.utils.IInitialiseWeights;
+import fazia.fazia.neurons.INeuron;
+import fazia.fazia.transfertFunctions.ITransfertFunction;
+import fazia.fazia.utils.IInitialiseBias;
+import fazia.fazia.utils.IInitialiseWeights;
 
 public class LayerLinear extends ILayer {
 
@@ -25,7 +24,7 @@ public class LayerLinear extends ILayer {
     public double[] forward(double[] inputs) {
         double[] out = new double[this.size()];
         int pos = 0;
-        for (NeuronLinear neuron) //Boucle for à modifier …
+        for (INeuron neuron: this) //Boucle for à modifier …
             out[pos++] = neuron.forward(inputs); //Appel la méthode forward de neurone
         return out;
     }
@@ -34,7 +33,7 @@ public class LayerLinear extends ILayer {
     public double[] backward(double[] dy) {
         int pos = 0;
         double[] dxt = new double[this.get(0).getWSize()];
-        for (INeuron neuron)
+        for (INeuron neuron: this)
             dxt = neuron.backward(dy[pos++], dxt);//Appel la méthode backward de neurone
         return dxt;
     }

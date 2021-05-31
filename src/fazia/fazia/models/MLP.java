@@ -1,7 +1,7 @@
 package fazia.fazia.models;
 
-import com.amroun.fazia.Layers.LayerLinear;
-import com.amroun.fazia.losses.ILoss;
+import fazia.fazia.Layers.LayerLinear;
+import fazia.fazia.losses.ILoss;
 
 public class MLP implements IModel {
 
